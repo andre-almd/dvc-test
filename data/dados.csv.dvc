@@ -1,0 +1,4 @@
+outs:
+- md5: b46e5822d02680e41d685074d838e672
+  size: 48
+  path: dados.csv
