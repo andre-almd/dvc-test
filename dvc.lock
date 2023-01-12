@@ -7,12 +7,12 @@ stages:
       md5: 820e4c673b0baf4877cc49aa031e3f1b
       size: 77
     - path: src/test.py
-      md5: 4a3cccd50033e1b40a277ba255f87df2
-      size: 341
+      md5: 3c1852af00aa9fb86276a8e2326d7ca3
+      size: 371
     params:
       params.yaml:
         params.param1: parametro
     outs:
     - path: data/generated.txt
-      md5: b5d375bffd319b91c4a391c05e2b561c
-      size: 207
+      md5: d805b966dd8df95c16faa51cd84d0368
+      size: 107
