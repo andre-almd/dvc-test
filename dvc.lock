@@ -11,8 +11,8 @@ stages:
       size: 371
     params:
       params.yaml:
-        params.param1: parametro
+        params.param1: parametro1
     outs:
     - path: data/generated.txt
-      md5: d805b966dd8df95c16faa51cd84d0368
-      size: 107
+      md5: 9ae2d37e0c55b646ab5953cb7cd460e6
+      size: 108
