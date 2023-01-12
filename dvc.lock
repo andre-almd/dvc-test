@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  test:
+    cmd: python3 src/test.py
+    deps:
+    - path: data/dados.csv
+      md5: 820e4c673b0baf4877cc49aa031e3f1b
+      size: 77
+    - path: src/test.py
+      md5: 4a3cccd50033e1b40a277ba255f87df2
+      size: 341
+    params:
+      params.yaml:
+        params.param1: parametro
+    outs:
+    - path: data/generated.txt
+      md5: b5d375bffd319b91c4a391c05e2b561c
+      size: 207

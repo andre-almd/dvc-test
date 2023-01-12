@@ -1,0 +1,10 @@
+stages:
+  test:
+    cmd: python3 src/test.py
+    deps:
+      - data/dados.csv
+      - src/test.py
+    params:
+      - params.param1
+    outs:
+      - data/generated.txt
