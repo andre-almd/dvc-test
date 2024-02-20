@@ -5,4 +5,4 @@ data_preprocess:
 train:
   kernel: 'rbf'
   gamma: 'scale'
-  c: 0.5
+  c: 1.0
