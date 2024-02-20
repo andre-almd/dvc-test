@@ -3,19 +3,27 @@ stages:
   test:
     cmd: python3 src/test.py
     deps:
-    - path: data/dados.csv
-      md5: 820e4c673b0baf4877cc49aa031e3f1b
-      size: 77
+    - path: data/model/model.joblib
+      hash: md5
+      md5: bb55e5ac50e7c613fd0d8e1bcbb734d1
+      size: 4483
+    - path: data/test.csv
+      hash: md5
+      md5: a87c7bb54ec1e8e3e225a6c9d6512aa0
+      size: 2998
+    - path: data/test_labels.csv
+      hash: md5
+      md5: f7dd532390fcfebde005221556a070ec
+      size: 78
     - path: src/test.py
-      md5: 3c1852af00aa9fb86276a8e2326d7ca3
-      size: 371
-    params:
-      params.yaml:
-        params.param1: parametro1
+      hash: md5
+      md5: bacd90f76c481924883a2a40a5f20590
+      size: 768
     outs:
-    - path: data/generated.txt
-      md5: 9ae2d37e0c55b646ab5953cb7cd460e6
-      size: 108
+    - path: metrics/model_metrics.json
+      hash: md5
+      md5: 3f478f6010b98453cd5286afe9c20b58
+      size: 120
   data_load:
     cmd: python3 src/data_load.py
     deps:
@@ -45,8 +53,8 @@ stages:
       size: 302
     - path: src/data_preprocess.py
       hash: md5
-      md5: a568ef6e5079aef3d285a3e3b31694e1
-      size: 938
+      md5: 8404180a1c0c18ca63b082025ce2b429
+      size: 1216
     params:
       params.yaml:
         data_preprocess.random_state: 45789
@@ -56,3 +64,43 @@ stages:
       hash: md5
       md5: 6e2c8c809aacab510cdc83a58dde9be1
       size: 1095
+    - path: data/test.csv
+      hash: md5
+      md5: a87c7bb54ec1e8e3e225a6c9d6512aa0
+      size: 2998
+    - path: data/test_labels.csv
+      hash: md5
+      md5: f7dd532390fcfebde005221556a070ec
+      size: 78
+    - path: data/train.csv
+      hash: md5
+      md5: 306b6a3a5930fe17e6f83ca3541da885
+      size: 8785
+    - path: data/train_labels.csv
+      hash: md5
+      md5: 284f8775cda20b75e60484641db5447e
+      size: 226
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - path: data/train.csv
+      hash: md5
+      md5: 306b6a3a5930fe17e6f83ca3541da885
+      size: 8785
+    - path: data/train_labels.csv
+      hash: md5
+      md5: 284f8775cda20b75e60484641db5447e
+      size: 226
+    - path: src/train.py
+      hash: md5
+      md5: f8f838af1e46bb50e9f94b90304afd6e
+      size: 455
+    params:
+      params.yaml:
+        train.gamma: scale
+        train.kernel: rbf
+    outs:
+    - path: data/model/model.joblib
+      hash: md5
+      md5: bb55e5ac50e7c613fd0d8e1bcbb734d1
+      size: 4483

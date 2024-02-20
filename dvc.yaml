@@ -17,4 +17,30 @@ stages:
       - data_preprocess.test_size
       - data_preprocess.random_state
     outs:
+      - data/train.csv
+      - data/test.csv
+      - data/train_labels.csv
+      - data/test_labels.csv
       - data/model/scaler.joblib
+
+  train:
+    cmd: python3 src/train.py
+    deps:
+      - src/train.py
+      - data/train.csv
+      - data/train_labels.csv
+    params:
+      - train.kernel
+      - train.gamma
+    outs:
+      - data/model/model.joblib
+
+  test:
+    cmd: python3 src/test.py
+    deps:
+      - src/test.py
+      - data/model/model.joblib
+      - data/test.csv
+      - data/test_labels.csv
+    metrics:
+      - metrics/model_metrics.json

@@ -1,3 +1,7 @@
 /generated.txt
 /input.csv
 /output.csv
+/train.csv
+/test.csv
+/train_labels.csv
+/test_labels.csv

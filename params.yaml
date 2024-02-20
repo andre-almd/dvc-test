@@ -1,3 +1,7 @@
 data_preprocess:
   test_size: 0.25
   random_state: 45789
+
+train:
+  kernel: 'rbf'
+  gamma: 'scale'

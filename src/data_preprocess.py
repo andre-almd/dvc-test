@@ -24,5 +24,11 @@ scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)
 x_test = scaler.transform(x_test)
 
+# Save train and test sets
+pd.DataFrame(x_train).to_csv('data/train.csv', index=False)
+pd.DataFrame(x_test).to_csv('data/test.csv', index=False)
+pd.DataFrame(y_train).to_csv('data/train_labels.csv', index=False)
+pd.DataFrame(y_test).to_csv('data/test_labels.csv', index=False)
+
 # Save Scaler with joblib
 dump(scaler, 'data/model/scaler.joblib')
