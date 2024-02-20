@@ -16,3 +16,19 @@ stages:
     - path: data/generated.txt
       md5: 9ae2d37e0c55b646ab5953cb7cd460e6
       size: 108
+  data_load:
+    cmd: python3 src/data_load.py
+    deps:
+    - path: src/data_load.py
+      hash: md5
+      md5: 5e9aa95f4cd63025802e00664830f4b0
+      size: 311
+    outs:
+    - path: data/input.csv
+      hash: md5
+      md5: 45109f850511f9474665f2c26f4c79f3
+      size: 2470
+    - path: data/output.csv
+      hash: md5
+      md5: 81b9fa498b568485eb1dd0eaaf0f84e9
+      size: 302

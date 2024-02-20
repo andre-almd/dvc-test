@@ -1,10 +1,8 @@
 stages:
-  test:
-    cmd: python3 src/test.py
+  data_load:
+    cmd: python3 src/data_load.py
     deps:
-      - data/dados.csv
-      - src/test.py
-    params:
-      - params.param1
+      - src/data_load.py
     outs:
-      - data/generated.txt
+      - data/input.csv
+      - data/output.csv
