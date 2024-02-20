@@ -32,3 +32,27 @@ stages:
       hash: md5
       md5: 81b9fa498b568485eb1dd0eaaf0f84e9
       size: 302
+  data_preprocess:
+    cmd: python3 src/data_preprocess.py
+    deps:
+    - path: data/input.csv
+      hash: md5
+      md5: 45109f850511f9474665f2c26f4c79f3
+      size: 2470
+    - path: data/output.csv
+      hash: md5
+      md5: 81b9fa498b568485eb1dd0eaaf0f84e9
+      size: 302
+    - path: src/data_preprocess.py
+      hash: md5
+      md5: a568ef6e5079aef3d285a3e3b31694e1
+      size: 938
+    params:
+      params.yaml:
+        data_preprocess.random_state: 45789
+        data_preprocess.test_size: 0.25
+    outs:
+    - path: data/model/scaler.joblib
+      hash: md5
+      md5: 6e2c8c809aacab510cdc83a58dde9be1
+      size: 1095

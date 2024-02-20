@@ -6,3 +6,15 @@ stages:
     outs:
       - data/input.csv
       - data/output.csv
+
+  data_preprocess:
+    cmd: python3 src/data_preprocess.py
+    deps:
+      - src/data_preprocess.py
+      - data/input.csv
+      - data/output.csv
+    params:
+      - data_preprocess.test_size
+      - data_preprocess.random_state
+    outs:
+      - data/model/scaler.joblib

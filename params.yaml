@@ -1,2 +1,3 @@
-params:
-  param1: "parametro1"
+data_preprocess:
+  test_size: 0.25
+  random_state: 45789
