@@ -11,7 +11,7 @@ params = yaml.safe_load(open("params.yaml"))["train"]
 x_train = pd.read_csv('data/train.csv').to_numpy()
 y_train = pd.read_csv('data/train_labels.csv').to_numpy().ravel()
 
-model = SVC(kernel=params['kernel'], gamma=params['gamma'])
+model = SVC(C=params['c'], kernel=params['kernel'], gamma=params['gamma'])
 model.fit(x_train, y_train)
 
 # Save model with joblib

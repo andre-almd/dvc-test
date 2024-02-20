@@ -32,6 +32,7 @@ stages:
     params:
       - train.kernel
       - train.gamma
+      - train.c
     outs:
       - data/model/model.joblib
 
